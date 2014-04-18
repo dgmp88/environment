@@ -1,0 +1,5 @@
+- name: add ppa
+  apt_repository: repo="ppa:ubuntu-mozilla-daily/firefox-aurora"
+
+- name: install
+  apt: pkg=firefox state=latest

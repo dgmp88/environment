@@ -1,0 +1,12 @@
+- name: install dependencies
+  apt: pkg={{ item }}
+  with_items: vim_dependencies
+
+- name: fetch latest source
+  git: repo=https://github.com/neovim/neovim.git dest=/tmp/neovim
+
+- name: build
+  command: make chdir=/tmp/neovim creates=/tmp/neovim/build/bin/nvim
+
+- name: install
+  command: make install chdir=/tmp/neovim creates=/usr/local/bin/nvim

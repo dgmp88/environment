@@ -1,0 +1,8 @@
+- hosts: local
+  sudo: yes
+  roles:
+    - update
+    - tmux
+    - git
+    - vim
+    - firefox_aurora

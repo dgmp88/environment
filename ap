@@ -1,0 +1,3 @@
+#!/bin/bash
+source /tmp/ansible-devel/hacking/env-setup
+ansible-playbook --connection=local --inventory=./local_inventory -K $@
