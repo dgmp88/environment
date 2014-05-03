@@ -1,1 +1,3 @@
 - git: repo=https://github.com/creationix/nvm.git dest=/home/michael/.nvm
+
+- file: path=/home/michael/.nvm owner=michael group=michael
