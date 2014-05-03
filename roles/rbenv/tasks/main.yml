@@ -1,0 +1,9 @@
+- name: install dependencies
+  apt: pkg={{ item }}
+  with_items: rbenv.dependencies
+
+- git: repo=https://github.com/sstephenson/rbenv.git dest=/home/michael/.rbenv
+
+- file: path=/home/michael/.rbenv owner=michael group=michael
+
+- git: repo=https://github.com/sstephenson/ruby-build.git dest=/home/michael/.rbenv/plugins/ruby-build
