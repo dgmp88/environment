@@ -1,12 +1,8 @@
-- name: install dependencies
-  apt: pkg={{ item }}
-  with_items: vim_dependencies
+- apt: pkg=exuberant-ctags
 
-- name: fetch latest source
-  git: repo=https://github.com/neovim/neovim.git dest=/tmp/neovim
+- apt: pkg=ack-grep
 
-- name: build
-  command: make chdir=/tmp/neovim creates=/tmp/neovim/build/bin/nvim
+- name: use ack-grep as ack
+  command: dpkg-divert --local --divert /usr/bin/ack --rename --add /usr/bin/ack-grep
 
-- name: install
-  command: make install chdir=/tmp/neovim creates=/usr/local/bin/nvim
+- apt: pkg=vim-nox

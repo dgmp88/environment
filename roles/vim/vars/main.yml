@@ -1,8 +1,0 @@
-vim_dependencies:
-  - libtool
-  - autoconf
-  - automake
-  - cmake
-  - libncurses5-dev
-  - g++
-  - pkg-config
