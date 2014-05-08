@@ -1,0 +1,5 @@
+- apt_key: url=https://www.hipchat.com/keys/hipchat-linux.key
+
+- apt_repository: repo="deb http://downloads.hipchat.com/linux/apt stable main"
+
+- apt: pkg=hipchat
