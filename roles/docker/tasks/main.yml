@@ -1,0 +1,23 @@
+- name: see if docker is installed
+  shell: "[ -f /usr/bin/docker ] && echo 'Found' || echo ''"
+  register: docker_installed
+
+- apt: pkg=software-properties-common state=latest update_cache=yes
+  when: (not docker_installed.stdout)
+
+- apt_key: url=https://get.docker.io/gpg state=present
+  when: (not docker_installed.stdout)
+
+- action: apt_repository repo='deb http://get.docker.io/ubuntu docker main' state=present update_cache=yes
+  when: (not docker_installed.stdout)
+
+- apt: pkg=lxc-docker state=latest update_cache=yes
+  when: (not docker_installed.stdout)
+
+- name: set docker path
+  lineinfile: dest=/etc/default/docker regexp="^DOCKER_OPTS=" line="DOCKER_OPTS=\"-g /mnt/docker\""
+  when: (not docker_installed.stdout)
+
+- name: restart docker
+  service: name=docker state=restarted
+  when: (not docker_installed.stdout)
