@@ -1,3 +1,5 @@
+- apt: pkg=lxc
+
 - name: see if docker is installed
   shell: "[ -f /usr/bin/docker ] && echo 'Found' || echo ''"
   register: docker_installed
@@ -21,3 +23,6 @@
 - name: restart docker
   service: name=docker state=restarted
   when: (not docker_installed.stdout)
+
+- name: add user to docker group
+  user: name=michael append=yes groups=docker
