@@ -12,3 +12,4 @@
     - rbenv
     - docker
     - hipchat
+    - go
