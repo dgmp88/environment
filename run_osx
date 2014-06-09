@@ -1,0 +1,2 @@
+#!/bin/bash
+ansible-playbook --connection=local --inventory=./local_inventory ./dev-osx.yml

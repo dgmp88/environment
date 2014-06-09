@@ -1,0 +1,10 @@
+- hosts: local
+  sudo: no
+  vars:
+    home: /Users/michael
+  roles:
+    - osx/git
+    - osx/tmux
+    - osx/vim
+    - osx/rbenv
+    - osx/zsh
