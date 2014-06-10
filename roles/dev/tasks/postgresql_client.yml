@@ -1,0 +1,2 @@
+- apt: pkg=postgresql-client
+  when: is_ubuntu

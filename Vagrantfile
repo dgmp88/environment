@@ -17,5 +17,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     machine.vm.provision "ansible" do |ansible|
       ansible.playbook = "dev-vagrant.yml"
     end
+
+    machine.vm.synced_folder "~/Dropbox", "/home/vagrant/Dropbox"
+    machine.vm.synced_folder "~/dev", "/home/vagrant/dev", nfs: true
   end
 end

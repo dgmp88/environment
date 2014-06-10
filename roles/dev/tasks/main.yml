@@ -7,3 +7,5 @@
 - include: rbenv.yml
 - include: tmux.yml
 - include: docker.yml
+- include: node.yml
+- include: postgresql_client.yml

@@ -1,0 +1,10 @@
+- apt: pkg={{ item }}
+  with_items:
+    - nodejs
+    - npm
+  when: is_ubuntu
+
+- homebrew: name=node
+  when: is_osx
+
+- npm: name=n global=yes
