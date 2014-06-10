@@ -1,4 +1,7 @@
 - hosts: all
   sudo: yes
+  vars:
+    home: /home/vagrant
+    user: vagrant
   roles:
-    - update
+    - dev

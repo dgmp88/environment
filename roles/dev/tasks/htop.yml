@@ -1,0 +1,5 @@
+- apt: pkg=htop
+  when: is_ubuntu
+
+- homebrew: name=htop-osx
+  when: is_osx

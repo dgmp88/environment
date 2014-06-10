@@ -1,5 +1,0 @@
-- name: install aptitude
-  apt: pkg=aptitude
-
-- name: apt update
-  apt: upgrade=yes

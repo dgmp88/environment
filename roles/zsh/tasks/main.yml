@@ -1,9 +1,0 @@
-- apt: pkg=zsh
-
-- git: repo=git://github.com/robbyrussell/oh-my-zsh.git
-       dest=/home/michael/.oh-my-zsh
-
-- command: chsh -s /bin/zsh michael
-
-- git: repo=git://github.com/zsh-users/zsh-syntax-highlighting.git
-       dest=/home/michael/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting

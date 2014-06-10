@@ -1,9 +1,13 @@
+- apt: pkg=zsh
+  when: is_ubuntu
+
 - homebrew: name=zsh
+  when: is_osx
 
 - git: repo=git://github.com/robbyrussell/oh-my-zsh.git
        dest={{ home }}/.oh-my-zsh
 
-- command: chsh -s /bin/zsh michael
+- command: chsh -s /bin/zsh {{ user }}
 
 - git: repo=git://github.com/zsh-users/zsh-syntax-highlighting.git
        dest={{ home }}/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting

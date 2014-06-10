@@ -1,0 +1,7 @@
+- name: install aptitude
+  apt: pkg=aptitude
+  when: is_ubuntu
+
+- name: apt update
+  apt: upgrade=yes update_cache=yes
+  when: is_ubuntu

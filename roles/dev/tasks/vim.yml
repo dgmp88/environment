@@ -1,0 +1,21 @@
+- apt: pkg=exuberant-ctags
+  when: is_ubuntu
+
+- homebrew: name=ctags-exuberant
+  when: is_osx
+
+- apt: pkg=ack-grep
+  when: is_ubuntu
+
+- name: use ack-grep as ack
+  command: dpkg-divert --local --divert /usr/bin/ack --rename --add /usr/bin/ack-grep
+  when: is_ubuntu
+
+- homebrew: name=ack
+  when: is_osx
+
+- apt: pkg=vim-nox
+  when: is_ubuntu
+
+- homebrew: name=vim
+  when: is_osx

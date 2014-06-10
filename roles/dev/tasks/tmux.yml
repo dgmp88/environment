@@ -1,0 +1,5 @@
+- apt: pkg=tmux
+  when: is_ubuntu
+
+- homebrew: name=tmux
+  when: is_osx

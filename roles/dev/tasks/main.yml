@@ -1,0 +1,9 @@
+- include: update.yml
+- include: curl.yml
+- include: git.yml
+- include: vim.yml
+- include: htop.yml
+- include: zsh.yml
+- include: rbenv.yml
+- include: tmux.yml
+- include: docker.yml

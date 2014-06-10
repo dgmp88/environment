@@ -1,0 +1,5 @@
+- homebrew: name=git
+  when: is_osx
+
+- apt: pkg=git
+  when: is_ubuntu

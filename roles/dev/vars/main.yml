@@ -1,3 +1,6 @@
+is_ubuntu: ansible_distribution == "Ubuntu"
+is_osx: ansible_distribution == "MacOSX"
+
 rbenv:
   dependencies:
     - autoconf

@@ -2,9 +2,6 @@
   sudo: no
   vars:
     home: /Users/michael
+    user: michael
   roles:
-    - osx/git
-    - osx/tmux
-    - osx/vim
-    - osx/rbenv
-    - osx/zsh
+    - dev

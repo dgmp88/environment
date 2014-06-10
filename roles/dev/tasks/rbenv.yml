@@ -1,0 +1,12 @@
+- apt: pkg={{ item }}
+  with_items: rbenv.dependencies
+  when: is_ubuntu
+
+- homebrew: name=rbenv
+  when: is_osx
+
+- git: repo=https://github.com/sstephenson/rbenv.git dest={{ home }}/.rbenv
+
+- file: path={{ home }}/.rbenv owner={{ user }}
+
+- git: repo=https://github.com/sstephenson/ruby-build.git dest={{ home }}/.rbenv/plugins/ruby-build

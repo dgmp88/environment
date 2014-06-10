@@ -1,8 +1,0 @@
-- apt: pkg=exuberant-ctags
-
-- apt: pkg=ack-grep
-
-- name: use ack-grep as ack
-  command: dpkg-divert --local --divert /usr/bin/ack --rename --add /usr/bin/ack-grep
-
-- apt: pkg=vim-nox
