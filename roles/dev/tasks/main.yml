@@ -9,3 +9,4 @@
 - include: docker.yml
 - include: node.yml
 - include: postgresql_client.yml
+- include: httpie.yml
