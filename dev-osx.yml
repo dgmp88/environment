@@ -3,5 +3,6 @@
   vars:
     home: /Users/michael
     user: michael
+    group: staff
   roles:
     - dev

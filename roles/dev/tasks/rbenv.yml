@@ -4,8 +4,10 @@
 
 - git: repo=https://github.com/sstephenson/rbenv.git dest={{ home }}/.rbenv
 
-- file: path={{ home }}/.rbenv owner={{ user }} group={{ user }} state=directory
+- file: path={{ home }}/.rbenv owner={{ user }} group={{ group }} state=directory
 
 - file: path={{ home }}/.rbenv owner={{ user }}
 
 - git: repo=https://github.com/sstephenson/ruby-build.git dest={{ home }}/.rbenv/plugins/ruby-build
+
+- file: path={{ home }}/.rbenv/plugins/ruby-build owner={{ user }} group={{ group }} state=directory

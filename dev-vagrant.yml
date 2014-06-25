@@ -3,5 +3,6 @@
   vars:
     home: /home/vagrant
     user: vagrant
+    group: vagrant
   roles:
     - dev
