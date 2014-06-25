@@ -1,0 +1,2 @@
+- apt: pkg=python-pip
+  when: is_ubuntu

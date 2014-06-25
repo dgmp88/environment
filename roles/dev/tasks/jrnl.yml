@@ -1,0 +1,2 @@
+- pip: name=jrnl
+  when: is_ubuntu
