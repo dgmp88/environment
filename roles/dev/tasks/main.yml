@@ -13,3 +13,4 @@
 - include: httpie.yml
 - include: jrnl.yml
 - include: hg.yml
+- include: go.yml

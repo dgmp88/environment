@@ -12,3 +12,8 @@ rbenv:
     - libreadline6-dev
     - zlib1g
     - zlib1g-dev
+    
+go:
+  url: http://golang.org/dl/go1.3.linux-amd64.tar.gz
+  tarball: go1.3.linux-amd64.tar.gz
+  checksum: go1.3.linux-amd64.tar.gz
