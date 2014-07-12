@@ -1,0 +1,5 @@
+- homebrew: name=hg
+  when: is_osx
+
+- apt: pkg=hg
+  when: is_ubuntu

@@ -12,3 +12,4 @@
 - include: postgresql_client.yml
 - include: httpie.yml
 - include: jrnl.yml
+- include: hg.yml
