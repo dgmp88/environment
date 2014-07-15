@@ -5,8 +5,8 @@
   when: is_ubuntu
 
 - get_url: url={{ go.url }} dest=/usr/local/src/{{ go.tarball }} sha256sum={{ go.checksum }}
-  when: is_ubuntu and go_version is not defined
+  when: is_ubuntu and go_version|failed or not go_version.stdout
  
 - name: Extract the Go tarball if Go is not yet installed or if it is not the desired version
   command: tar -C /usr/local -xf /usr/local/src/{{ go.tarball }}
-  when: is_ubuntu and go_version is not defined
+  when: is_ubuntu and go_version|failed or not go_version.stdout

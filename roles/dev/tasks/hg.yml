@@ -1,5 +1,5 @@
 - homebrew: name=hg
   when: is_osx
 
-- apt: pkg=hg
+- apt: pkg=mercurial
   when: is_ubuntu
