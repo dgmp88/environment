@@ -21,5 +21,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     machine.vm.synced_folder "~/Dropbox", "/home/vagrant/Dropbox"
     machine.vm.synced_folder "~/Downloads", "/home/vagrant/Downloads"
     machine.vm.synced_folder "~/dev", "/home/vagrant/dev", nfs: true
+    machine.vm.synced_folder "~/go", "/home/vagrant/go", nfs: true
   end
 end
