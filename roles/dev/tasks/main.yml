@@ -14,3 +14,4 @@
 - include: jrnl.yml
 - include: hg.yml
 - include: go.yml
+- include: awscli.yml
