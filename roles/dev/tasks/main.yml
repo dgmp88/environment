@@ -15,3 +15,4 @@
 - include: hg.yml
 - include: go.yml
 - include: awscli.yml
+- include: boto.yml
