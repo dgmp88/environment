@@ -1,0 +1,1 @@
+- lineinfile: dest=/etc/ansible/ansible.cfg line="pipelining=True"
