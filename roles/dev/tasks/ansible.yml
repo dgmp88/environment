@@ -1,1 +1,8 @@
+- apt_repository: repo="ppa:ansible/ansible" state=present
+  when: is_ubuntu
+
+- apt: pkg=ansible update_cache=yes
+  when: is_ubuntu
+
 - lineinfile: dest=/etc/ansible/ansible.cfg line="pipelining=True"
+  when: is_ubuntu
