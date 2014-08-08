@@ -1,15 +1,20 @@
+- apt: pkg=unzip
+  when: is_ubuntu
+
 - name: Check if elixir is already present
   command: /usr/bin/test -e {{ home }}/elixir
   ignore_errors: True
   register: elixir_exists
+  when: is_ubuntu
 
 - get_url: url=https://github.com/elixir-lang/elixir/releases/download/v0.15.0/Precompiled.zip dest=/tmp/elixir.zip
-  when: elixir_exists.rc != 0
+  when: elixir_exists.rc != 0 and is_ubuntu
 
 - file: path={{ home }}/elixir state=directory
-  when: elixir_exists.rc != 0
+  when: elixir_exists.rc != 0 and is_ubuntu
 
 - command: unzip -d {{ home }}/elixir /tmp/elixir.zip
-  when: elixir_exists.rc != 0
+  when: elixir_exists.rc != 0 and is_ubuntu
 
 - file: path={{ home }}/elixir state=directory owner={{ user }} group={{ group }}
+  when: is_ubuntu

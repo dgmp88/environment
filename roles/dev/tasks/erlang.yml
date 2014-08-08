@@ -1,5 +1,8 @@
 - get_url: url=http://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb dest=/tmp/erlang.deb
+  when: is_ubuntu
 
 - apt: deb=/tmp/erlang.deb
+  when: is_ubuntu
 
 - apt: name=erlang update_cache=yes
+  when: is_ubuntu
