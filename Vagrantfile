@@ -22,5 +22,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     machine.vm.synced_folder "~/Downloads", "/home/vagrant/Downloads"
     machine.vm.synced_folder "~/dev", "/home/vagrant/dev", nfs: true
     machine.vm.synced_folder "~/go", "/home/vagrant/go", nfs: true
+
+    config.vm.provider "virtualbox" do |v|
+      v.customize [ "guestproperty", "set", :id, "/VirtualBox/GuestAdd/VBoxService/--timesync-set-threshold", 10000 ]
+    end
   end
 end
