@@ -10,4 +10,4 @@
 
 - git: repo=https://github.com/sstephenson/ruby-build.git dest={{ home }}/.rbenv/plugins/ruby-build
 
-- file: path={{ home }}/.rbenv/plugins/ruby-build owner={{ user }} group={{ group }} state=directory
+- file: path={{ home }}/.rbenv/plugins owner={{ user }} group={{ group }} state=directory
