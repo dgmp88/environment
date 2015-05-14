@@ -15,11 +15,17 @@
 - action: apt_repository repo='deb http://get.docker.io/ubuntu docker main' state=present update_cache=yes
   when: docker_installed is defined and not docker_installed.stdout
 
+- name: install linux extras
+  apt: pkg=linux-image-extra-virtual state=latest update_cache=yes
+
+- name: install aufs tools
+  apt: pkg=aufs-tools state=latest update_cache=yes
+
 - apt: pkg=lxc-docker state=latest update_cache=yes
   when: docker_installed is defined and not docker_installed.stdout
 
-- name: set docker path
-  lineinfile: dest=/etc/default/docker regexp="^DOCKER_OPTS=" line="DOCKER_OPTS=\"-g /mnt/docker\""
+- name: set docker path and aufs support
+  lineinfile: dest=/etc/default/docker regexp="^DOCKER_OPTS=" line="DOCKER_OPTS=\"-g /mnt/docker -s aufs\""
   when: docker_installed is defined and not docker_installed.stdout
 
 - name: restart docker
