@@ -1,8 +1,8 @@
 - hosts: local
   sudo: no
   vars:
-    home: /Users/michael
-    user: michael
+    home: /Users/george
+    user: george
     group: staff
   roles:
     - dev
