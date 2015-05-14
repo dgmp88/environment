@@ -16,6 +16,4 @@
 - include: go.yml
 - include: awscli.yml
 - include: boto.yml
-- include: erlang.yml
-- include: elixir.yml
 - include: ansible.yml

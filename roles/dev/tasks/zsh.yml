@@ -6,6 +6,7 @@
 
 - git: repo=git://github.com/robbyrussell/oh-my-zsh.git
        dest={{ home }}/.oh-my-zsh
+       accept_hostkey=True
 
 - file: path={{ home }}/.oh-my-zsh owner={{ user }} group={{ group }} state=directory
 
